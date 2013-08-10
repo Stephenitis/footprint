@@ -1,12 +1,13 @@
 #login-box
   %h2 Welcome to Footprints
   %p Join us in helping measure and compare your carbon footprint as you move around!
+  %p=link_to "Already have an account?", new_session_path
   =form_for @user, {url: sessions_path } do |f|
     =f.text_field :name, {class: "login-input", placeholder: "NAME"}
     =f.email_field :email, {class: "login-input", placeholder: "EMAIL"}
     =f.text_field :zipcode, {class: "login-input", placeholder: "ZIPCODE"}
     =f.password_field :password, {class: "login-input", placeholder: "PASSWORD"}
-    =f.submit "login", class: "login-button"
+    =f.submit "Sign Up", class: "login-button"
   - if flash[:signup_errors]
     - flash[:signup_errors].each do |error|
       %p= error

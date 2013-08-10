@@ -1,6 +1,6 @@
 #login-box
-  %h2 Welcome to Footprints
-  %p Join us in helping measure and compare your carbon footprint as you move around!
+  %h2 Sign into Footprints
+  %p=link_to "Don't have an account?", new_user_path
   =form_for @user, {url: sessions_path } do |f|
     =f.email_field :email, {class: "login-input", placeholder: "EMAIL"}
     =f.password_field :password, {class: "login-input", placeholder: "PASSWORD"}
