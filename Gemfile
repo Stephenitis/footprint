@@ -24,6 +24,7 @@ gem  'httparty'
 gem 'unicorn'
 
 group :development, :test do
+	gem 'annotate'
   gem "debugger"
   gem 'guard'
   gem 'guard-rspec'

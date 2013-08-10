@@ -1,17 +1,8 @@
-.container
-  %nav
+#daily-score
+  %h1 7.5
+#dashboard
+  #activity
+  #rankings
     %ul
-      %li.logo 
-        %h3 FootPrint
-      %li 
-      %li= link_to "Logout", "#"
-      %li=link_to "Authorize with Moves", '/auth/moves'
-      %li=button_to "delete", session_path(@user.object_id), :method=>:delete, :class=>:destroy
-  #daily-score
-    %h1 7.5
-  #dashboard
-    #activity
-    #rankings
-      %ul
-        - @top_users.each_with_index do |user, index|
-          %li= link_to "<img src='#{gravatar(user,30)}' alt='#{user.name}'> #{index + 1} #{user.name}".html_safe, user_path(user)
+      - @top_users.each_with_index do |user, index|
+        %li= link_to "<img src='#{gravatar(user,30)}' alt='#{user.name}'> #{index + 1} #{user.name}".html_safe, user_path(user)

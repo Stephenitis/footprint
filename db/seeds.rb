@@ -11,3 +11,9 @@ user = User.new(name:"user",
 								zipcode:94117)
 user.password = "password"
 user.save
+
+user = User.new(name:"mitch",
+								email:"mitchel.seaman@gmail.com",
+								zipcode:94117)
+user.password = "password"
+user.save
