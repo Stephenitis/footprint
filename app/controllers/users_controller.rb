@@ -30,6 +30,10 @@ class UsersController < ApplicationController
     
   def index
     @user = self.current_user
+    @top_users = User.order('score DESC').limit(5)
+  end
+
+  def show
   end
 
 end

@@ -16,7 +16,7 @@ Footprint::Application.routes.draw do
 
   match 'login' => 'sessions#new', :as => "login"
 
-  resources :users, :only => [:index, :new, :create] do
+  resources :users, :only => [:show, :index, :new, :create] do
     member do
       post 'oauth'
     end
