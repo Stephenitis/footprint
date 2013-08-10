@@ -30,6 +30,10 @@ class UsersController < ApplicationController
     
   def index
     @user = self.current_user
+    @friends = current_user.friendships
+  end
+
+  def show
   end
 
 end
