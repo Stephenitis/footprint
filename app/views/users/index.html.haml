@@ -13,5 +13,5 @@
     #activity
     #rankings
       %ul
-      - @friends.each_with_index do |friend, index|
-        %li= link_to "#{index + 1} #{friend.name}", user_path(friend)
+        - @top_users.each_with_index do |user, index|
+          %li= link_to "<img src='#{gravatar(user,30)}' alt='#{user.name}'> #{index + 1} #{user.name}".html_safe, user_path(user)
