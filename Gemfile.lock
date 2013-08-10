@@ -122,9 +122,8 @@ PLATFORMS
 DEPENDENCIES
   bcrypt-ruby (~> 3.0.0)
   coffee-rails (~> 3.2.1)
-  html2haml
-
   haml-rails
+  html2haml
   jquery-rails
   pg
   rails (= 3.2.13)
