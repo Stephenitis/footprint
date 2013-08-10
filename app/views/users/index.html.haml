@@ -12,3 +12,6 @@
   #dashboard
     #activity
     #rankings
+      %ul
+      - @friends.each_with_index do |friend, index|
+        %li= link_to "#{index + 1} #{friend.name}", user_path(friend)
