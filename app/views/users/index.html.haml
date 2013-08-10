@@ -3,4 +3,4 @@
     %ul
       %li.logo FootPrint
       %li=link_to "Authorize with Moves", '/auth/moves'
-      %li= link_to "Logout", "#"
+      %li=button_to "delete", session_path(@user.object_id), :method=>:delete, :class=>:destroy
