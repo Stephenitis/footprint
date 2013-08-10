@@ -13,8 +13,9 @@ class User < ActiveRecord::Base
 
   def update_score!
   	all_events = self.events.all
-  	total = all_events.inject(:+)
-  	self.score = total/all_events.size
+  	all_events.map! { |event| event = event.score }
+  	total = all_events.reduce(:+)
+  	self.score = total / all_events.size
   	self.save
   end
 end
