@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130810073141) do
+ActiveRecord::Schema.define(:version => 20130810081751) do
 
   create_table "events", :force => true do |t|
     t.string  "kind"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(:version => 20130810073141) do
     t.string  "email"
     t.integer "zipcode"
     t.integer "score"
+    t.string  "password_digest"
   end
 
 end
