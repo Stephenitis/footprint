@@ -1,7 +1,7 @@
 Footprint::Application.routes.draw do
 
   get '/auth/:provider/callback', to: 'oauths#index'
-  post '/auth/:provider/callback', to: 'oauths#index'
+  # post '/auth/:provider/callback', to: 'oauths#index'
 
   # resources :oauth, only: [:index]
 
