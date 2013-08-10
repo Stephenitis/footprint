@@ -1,40 +1,27 @@
 #daily-score
   %h1 7.5
+
 #dashboard
   #activity
+    %ul
+      %h2=@daily_events.meters_walked
+      %p meters walked 
+      %h2=@daily_events.meters_biked
+      %p meters biked
+      %h2=@daily_events.meters_driven
+      %p meters driven
+      %h2=@daily_events.carbon_footprint
+      %p lbs of CO2 emissions
+
   #rankings
     %ul
       - @top_users.each_with_index do |user, index|
-        %li= link_to "<img src='#{gravatar(user,30)}' alt='#{user.name}'> #{index + 1} #{user.name}".html_safe, user_path(user)
-      %li.logo 
-        %h3 FootPrint
-      %li 
-      %li= link_to "Logout", "#"
-      %li=link_to "Authorize with Moves", '/auth/moves'
-      %li=button_to "delete", session_path(@user.object_id), :method=>:delete, :class=>:destroy
-  / #daily-score
-  /   %h1= "#{@user.score}"
-  #dashboard
-    #activity
-      %ul
-        %h2=@daily_events.meters_walked
-        %p meters walked 
-        %h2=@daily_events.meters_biked
-        %p meters biked
-        %h2=@daily_events.meters_driven
-        %p meters driven
-        %h2=@daily_events.carbon_footprint
-        %p lbs of CO2 emissions
-
-    #rankings
-      %ul
-        - @top_users.each_with_index do |user, index|
-          %li= link_to "<img src='#{gravatar(user,30)}' alt='#{user.name}'> #{index + 1} #{user.name}".html_safe, user_path(user), class: 'user_profile', data: {id: user.id }
-  / Modal
-  #myModal.modal.fade
-    .modal-dialog
-      .modal-content
-        .modal-body
-        .modal-footer
-          %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"} Close
+        %li= link_to "<img src='#{gravatar(user,75)}' alt='#{user.name}'> #{index + 1} #{user.name}".html_safe, user_path(user), class: 'user_profile', data: {id: user.id }
+/ Modal
+#myModal.modal.fade
+  .modal-dialog
+    .modal-content
+      .modal-body
+      .modal-footer
+        %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"} Close
 
