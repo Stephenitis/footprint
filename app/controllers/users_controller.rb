@@ -29,8 +29,12 @@ class UsersController < ApplicationController
   end
     
   def index
-    @user = self.current_user
-    @top_users = User.order('score DESC').limit(5)
+    if !self.current_user
+      redirect_to login_path
+    else
+      @user = self.current_user
+      @top_users = User.order('score DESC').limit(5)
+    end
   end
 
   def show
