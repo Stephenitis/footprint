@@ -10,8 +10,46 @@ module UserHelper
   end
 
 
-  def moves_api_call()
+  def moves_daily_log
     response = HTTParty.get("https://api.moves-app.com/api/v1/user/activities/daily/20130809?access_token=mfqJ5ApA51SA1BXV1Tr7G9B_6oPTdYyMllb63U9kOq_hy33pQkFnib_G1bL7H45E")
-    puts response.body
+    daily_log = JSON.parse(response.body)
   end
+
+  private
+
+    def daily_walk_distance(daily_log)
+      @daily_walk_distance = 0
+
+      daily_log[0]['segments'].each do |segment|
+        segment['activities'].each do |activity|
+          @daily_walk_distance += activity['distance'] if activity['activity'] == 'wlk' 
+        end
+      end
+
+      @daily_walk_distance
+    end
+
+    def daily_trip_distance(daily_log)
+      @daily_trip_distance = 0
+
+      daily_log[0]['segments'].each do |segment|
+        segment['activities'].each do |activity|
+          @daily_trip_distance += activity['distance'] if activity['activity'] == 'trp' 
+        end
+      end
+
+      @daily_trip_distance
+    end
+
+    def daily_cycle_distance(daily_log)
+      @daily_cycle_distance = 0
+
+      daily_log[0]['segments'].each do |segment|
+        segment['activities'].each do |activity|
+          @daily_cycle_distance += activity['distance'] if activity['activity'] == 'cyc' 
+        end
+      end
+
+      @daily_cycle_distance
+    end
 end
