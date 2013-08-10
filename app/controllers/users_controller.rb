@@ -18,7 +18,6 @@ class UsersController < ApplicationController
 
   def oauth
     user = self.current_user
-    p user
     user.moves_access_token = auth_hash[:credentials][:token]
     user.moves_refresh_token = auth_hash[:credentials][:refresh_token]
     user.save
