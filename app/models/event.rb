@@ -3,11 +3,11 @@
 # Table name: events
 #
 #  id               :integer          not null, primary key
-#  distance         :integer
+#  meters_driven    :integer
 #  user_id          :integer
 #  score            :integer
-#  miles_walked     :integer
-#  miles_biked      :integer
+#  meters_walked    :integer
+#  meters_biked     :integer
 #  carbon_footprint :integer
 #  calories         :integer
 #

@@ -12,8 +12,8 @@
       %li= link_to "Logout", "#"
       %li=link_to "Authorize with Moves", '/auth/moves'
       %li=button_to "delete", session_path(@user.object_id), :method=>:delete, :class=>:destroy
-  #daily-score
-    %h1= "#{@user.score}"
+  / #daily-score
+  /   %h1= "#{@user.score}"
   #dashboard
     #activity
       %ul
@@ -37,3 +37,4 @@
         .modal-body
         .modal-footer
           %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"} Close
+

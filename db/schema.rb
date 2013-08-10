@@ -14,7 +14,7 @@
 ActiveRecord::Schema.define(:version => 20130810192438) do
 
   create_table "events", :force => true do |t|
-    t.integer "distance"
+    t.integer "meters_driven"
     t.integer "user_id"
     t.integer "score"
     t.integer "meters_walked"
@@ -33,6 +33,8 @@ ActiveRecord::Schema.define(:version => 20130810192438) do
     t.string  "email"
     t.integer "zipcode"
     t.integer "score"
+    t.string  "moves_access_token"
+    t.string  "moves_refresh_token"
     t.string  "password_digest"
   end
 
