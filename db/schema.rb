@@ -33,6 +33,8 @@ ActiveRecord::Schema.define(:version => 20130810183453) do
     t.string  "email"
     t.integer "zipcode"
     t.integer "score"
+    t.string  "moves_access_token"
+    t.string  "moves_refresh_token"
     t.string  "password_digest"
   end
 

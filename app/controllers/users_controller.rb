@@ -29,8 +29,12 @@ class UsersController < ApplicationController
   end
     
   def index
-    @user = self.current_user
-    @friends = current_user.friendships
+    if !self.current_user
+      redirect_to login_path
+    else
+      @user = self.current_user
+      @friends = current_user.friendships
+    end
   end
 
   def show
