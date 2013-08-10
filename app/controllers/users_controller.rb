@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     @user.save
     if @user.errors.any?
-      flash[:signup_errors] = @user.errors.full_messages
+      flash.now[:signup_errors] = @user.errors.full_messages
       render new_user_path
     else
       self.current_user = @user
