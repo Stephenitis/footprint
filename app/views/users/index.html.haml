@@ -13,5 +13,5 @@
     #activity
     #rankings
       %ul
-      - @top_users.each_with_index do |user, index|
-        %li= link_to "#{index + 1} #{user.name}", user_path(user)
+        - @top_users.each_with_index do |user, index|
+          %li= link_to "#{index + 1} #{user.name}", user_path(user)
