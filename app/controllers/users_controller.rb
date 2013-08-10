@@ -52,6 +52,8 @@ class UsersController < ApplicationController
   end
 
   def show
+    @user = self.current_user
+    render layout: false
   end
 
 end
