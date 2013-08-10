@@ -11,8 +11,9 @@ module UserHelper
     @carbon = parsed_response["response"]["result_motor_vehicles_direct"].to_f + parsed_response["response"]["result_motor_vehicles_indirect"].to_f
   end
 
-  def moves_daily_log
-    response = HTTParty.get("https://api.moves-app.com/api/v1/user/activities/daily/20130809?access_token=mfqJ5ApA51SA1BXV1Tr7G9B_6oPTdYyMllb63U9kOq_hy33pQkFnib_G1bL7H45E")
+  def moves_daily_log(user)
+    access_token = user.moves_access_token
+    response = HTTParty.get("https://api.moves-app.com/api/v1/user/activities/daily/20130809?access_token=#{access_token}")
     daily_log = JSON.parse(response.body)
   end
 

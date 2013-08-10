@@ -10,4 +10,5 @@ user = User.new(name:"user",
 								email:"nguyenhstephen@gmail.com",
 								zipcode:94117)
 user.password = "password"
+user.moves_access_token = 'mfqJ5ApA51SA1BXV1Tr7G9B_6oPTdYyMllb63U9kOq_hy33pQkFnib_G1bL7H45E'
 user.save
