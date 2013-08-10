@@ -11,7 +11,7 @@ module UserHelper
 
 
   def moves_api_call()
-    response = HTTParty.get("https://api.moves-app.com/api/v1/user/activities/daily?from=20130804&to=20130810&access_token=mfqJ5ApA51SA1BXV1Tr7G9B_6oPTdYyMllb63U9kOq_hy33pQkFnib_G1bL7H45E")
+    response = HTTParty.get("https://api.moves-app.com/api/v1/user/activities/daily/20130809?access_token=mfqJ5ApA51SA1BXV1Tr7G9B_6oPTdYyMllb63U9kOq_hy33pQkFnib_G1bL7H45E")
     puts response.body
   end
 end
