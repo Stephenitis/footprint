@@ -1,8 +1,9 @@
 Footprint::Application.routes.draw do
 
 
-  get '/auth/:provider/callback', to: 'oauths#index'
-  # post '/auth/:provider/callback', to: 'oauths#index'
+
+  get '/auth/:provider/callback', to: 'users#oauth'
+  post '/auth/:provider/callback', to: 'users#oauth'
 
   # resources :oauth, only: [:index]
 
@@ -11,10 +12,14 @@ Footprint::Application.routes.draw do
 
   # root :to => 'welcome#index'
 
-  root :to => 'user#login'
+  root :to => 'oauths#index'
 
   match 'login' => 'sessions#new', :as => "login"
-  resources :users, :only => [:new, :create]
+  resources :users, :only => [:new, :create] do
+    member do
+      post 'oauth'
+    end
+  end
   resources :sessions, only: [:new, :create, :destroy]
 
 end

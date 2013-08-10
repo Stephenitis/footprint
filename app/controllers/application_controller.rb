@@ -13,5 +13,5 @@ class ApplicationController < ActionController::Base
     !current_user.nil?
   end
 
-  helper_method :current_user, :logged_in?
+  helper_method :current_user, :logged_in?, :current_user=
 end

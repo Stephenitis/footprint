@@ -16,4 +16,17 @@ class UsersController < ApplicationController
     end
   end
 
+  def oauth
+    user = self.current_user
+    p user
+    user.moves_access_token = auth_hash[:credentials][:token]
+    user.moves_refresh_token = auth_hash[:credentials][:refresh_token]
+    user.save
+    redirect_to users_path
+  end
+
+  def auth_hash
+    request.env['omniauth.auth']
+  end
+
 end
