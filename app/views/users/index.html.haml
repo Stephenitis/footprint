@@ -11,6 +11,16 @@
     %h1= "#{@user.score}"
   #dashboard
     #activity
+      %ul
+        %h2=@daily_events.meters_walked
+        %p meters walked 
+        %h2=@daily_events.meters_biked
+        %p meters biked
+        %h2=@daily_events.meters_driven
+        %p meters driven
+        %h2=@daily_events.carbon_footprint
+        %p lbs of CO2 emissions
+
     #rankings
       %ul
         - @top_users.each_with_index do |user, index|

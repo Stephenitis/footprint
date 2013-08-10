@@ -1,24 +1,28 @@
 module UserHelper
 
   ########################
-  def berkley_calc(meters, mpg="24")
+  def berkeley_calc(meters, mpg="24")
     yearly_miles = meters_to_miles(meters) * 365
+
     response = HTTParty.get("https://apis-dev.berkeley.edu/coolclimate/footprint-sandbox?input_location=20151&input_income=1&input_location_mode=1&input_size=0&input_footprint_transportation_miles1=#{yearly_miles}&input_footprint_transportation_mpg1=#{mpg}&input_footprint_transportation_fuel1=0&app_id=f5e89990&app_key=d1847181c85aa26015b4ae9afb230b91")
   
     # response.code, response.message, response.headers.inspect
-    require 'crack/xml' # for just xml
     parsed_response = Crack::XML.parse(response.body)
-    @carbon = parsed_response["response"]["result_motor_vehicles_direct"].to_f + parsed_response["response"]["result_motor_vehicles_indirect"].to_f
+
+    # Berkeley API returns tons of CO2/year
+    carbon_tons_by_year = parsed_response["response"]["result_motor_vehicles_direct"].to_f + parsed_response["response"]["result_motor_vehicles_indirect"].to_f
+    
+    # Convert to lbs of CO2/Day
+    carbon_tons_by_day = carbon_tons_by_year / 365
+
+    # Daily lbs of CO2/day
+    carbon_lbs_by_day = carbon_tons_by_day * 2204.6
   end
 
   def moves_daily_log(user)
     access_token = user.moves_access_token
     response = HTTParty.get("https://api.moves-app.com/api/v1/user/activities/daily/20130809?access_token=#{access_token}")
     daily_log = JSON.parse(response.body)
-  end
-
-  def meters_to_miles(meters=0)
-    meters * 0.00062137
   end
 
   def daily_walk_distance(daily_log)
@@ -55,5 +59,10 @@ module UserHelper
     end
 
     @daily_cycle_distance
+  end
+
+  private
+  def meters_to_miles(meters=0)
+    meters * 0.00062137
   end
 end

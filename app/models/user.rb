@@ -18,4 +18,6 @@ class User < ActiveRecord::Base
   	self.score = total / all_events.size
   	self.save
   end
+
+  
 end
