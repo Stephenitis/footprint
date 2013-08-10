@@ -35,13 +35,13 @@ class UsersController < ApplicationController
       @user = self.current_user
       @top_users = User.order('score DESC').limit(5)
 
-      daily_log = moves_daily_log(@user)
-      @daily_walk = daily_walk_distance(daily_log)
-      @daily_cycle = daily_cycle_distance(daily_log)
-      @daily_trip = daily_trip_distance(daily_log)
+      # daily_log = moves_daily_log(@user)
+      # @daily_walk = daily_walk_distance(daily_log)
+      # @daily_cycle = daily_cycle_distance(daily_log)
+      # @daily_trip = daily_trip_distance(daily_log)
       
 
-      @user.events << Event.create(score)
+      # @user.events << Event.create(score)
 
     end
   end
