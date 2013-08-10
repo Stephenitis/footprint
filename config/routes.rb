@@ -11,7 +11,7 @@ Footprint::Application.routes.draw do
 
   # root :to => 'welcome#index'
 
-  root :to => 'user#login'
+  root :to => 'sessions#new'
 
   match 'login' => 'sessions#new', :as => "login"
   resources :users, :only => [:new, :create]
