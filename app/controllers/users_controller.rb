@@ -46,7 +46,7 @@ class UsersController < ApplicationController
       daily_CO2_footprint = berkeley_calc(daily_trip)
 
       # writing event to db
-      @user.events << Event.create(meters_driven: daily_trip,  score: 90, meters_walked: daily_walk, meters_biked: daily_cycle, carbon_footprint: daily_CO2_footprint)
+      @user.events << Event.create(meters_driven: daily_trip, meters_walked: daily_walk, meters_biked: daily_cycle, carbon_footprint: daily_CO2_footprint)
       @daily_events = @user.events.last
     end
   end
