@@ -11,14 +11,13 @@
       %ul.left
         / .button_link
         %li= button_to "footprint", root_path, class: "nav_button bg-white"
-        / %li= link_to "Logout", "#"
-        / .button_link
-        %li= link_to image_tag( 'moves_logo.png', size: '50x50'), 'auth/moves'
-        / # %li=image_tag "moves_logo.png", size: "50x50", class: "nav_button"
-        / =link_to "", 'auth/moves'
-        %li=button_to "Authorize with Moves", '/auth/moves', class: "nav_button bg-white"
+        -if current_user
+          %li= link_to image_tag(gravatar(@user,50)), user_path(@user)
+          %li=button_to "Authorize with Moves", '/auth/moves', class: "nav_button bg-white"
+          %li= link_to image_tag( 'moves_logo.png', size: '50x50'), 'auth/moves'
       %ul.right
-        %li=button_to "Logout", session_path(@user.object_id), :method=>:delete, class: "nav_button bg-blue"
+        -if current_user
+          %li=button_to "Logout", session_path(@user.object_id), :method=>:delete, class: "nav_button bg-blue"
 
     .container
       = yield
