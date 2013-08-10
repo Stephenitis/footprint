@@ -1,4 +1,11 @@
 Footprint::Application.routes.draw do
+
+  get '/auth/:provider/callback', to: 'oauths#index'
+  post '/auth/:provider/callback', to: 'oauths#index'
+
+  # resources :oauth, only: [:index]
+
+  # resources :sessions, only: [:create]
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
