@@ -1,4 +1,5 @@
 class Event < ActiveRecord::Base
+	attr_accessible :distance, :user_id, :score, :meters_walked, :meters_biked, :carbon_footprint, :calories
 	belongs_to :user
 
 	after_save :update_user_score
