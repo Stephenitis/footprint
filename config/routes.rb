@@ -12,7 +12,7 @@ Footprint::Application.routes.draw do
 
   # root :to => 'welcome#index'
 
-  root :to => 'oauths#index'
+  root :to => 'users#index'
 
   match 'login' => 'sessions#new', :as => "login"
 
@@ -21,7 +21,7 @@ Footprint::Application.routes.draw do
       post 'oauth'
     end
   end
-  
+
   resources :sessions, only: [:new, :create, :destroy]
 
 end
