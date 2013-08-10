@@ -3,11 +3,12 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body{
-  background-image: url('background.jpeg');
+  background: url('background.jpeg') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 h1{
   font-size: 5em;
@@ -16,28 +17,27 @@ h1{
 }
 #login-box{
   background-color: rgba(255, 255,255, 0.7);
-  width:40%;
-  padding: 20px 0 0 20px;
+  width: 400px;
+  padding: 20px;
   margin: 0 auto;
-  height:300px;
 }
 
 .login-input {
-  width:90%;
+  width: 380px;
   border: 1px solid #999;
   height: 25px;
   display: block;
-  margin: 0 auto;
-  margin: 10px 10px 10px 10px;
+  margin: 10px 0px;
   padding: 5px 0 5px 15px;
 }
 
 .login-button{
+  font-size: 2em;
+  width: 400px;
   background-color: #FC943A;
   border : 0px;
-  width:20%;
+  display: block;
   color:white;
-  float:right;
   padding:5px;
   margin-right: 40px;
 }

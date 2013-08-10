@@ -1,11 +1,8 @@
-%h1 Login
-
-=form_for @user, {url: sessions_path, html: { class: :login } } do |f|
-  %p
-    =f.label :email, "Email"
-    =f.email_field :email
-  %p
-    =f.label :password, "Password"
-    =f.password_field :password
-  %p=f.submit "Log In"
-                                       
+#login-box
+  %h2 Sign into Footprints
+  %p=link_to "Don't have an account?", new_user_path
+  =form_for @user, {url: sessions_path } do |f|
+    =f.email_field :email, {class: "login-input", placeholder: "EMAIL"}
+    =f.password_field :password, {class: "login-input", placeholder: "PASSWORD"}
+    =f.submit "login", class: "login-button"
+  =#image_tag("moves_logo.png")

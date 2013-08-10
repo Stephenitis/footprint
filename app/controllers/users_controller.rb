@@ -27,6 +27,9 @@ class UsersController < ApplicationController
 
   def auth_hash
     request.env['omniauth.auth']
+    
+  def index
+
   end
 
 end
