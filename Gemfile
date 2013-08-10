@@ -23,22 +23,12 @@ gem 'bcrypt-ruby'#, '~> 3.0.0'
 gem 'unicorn'
 
 group :development, :test do
-  gem "fakeweb", "~> 1.3"
   gem "debugger"
-  gem 'rspec-rails', '~> 2.0'
-  gem 'capybara'
-  gem 'selenium-webdriver'
-  gem 'database_cleaner'
   gem 'guard'
   gem 'guard-rspec'
   gem 'quiet_assets'
   gem 'better_errors'
-  gem 'binding_of_caller'
   gem 'sextant'
-  gem 'factory_girl_rails'
-  gem 'faker'
   gem 'pry-rails'
-  gem 'rack_session_access'
   gem 'railroady'
-  gem "letter_opener"
 end
