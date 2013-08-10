@@ -1,20 +1,12 @@
-.container
-  %h1 Signup
-  = form_for @user do |f|
-    %p
-      = f.label :name
-      = f.text_field :name
-    %p
-      = f.label :email
-      = f.email_field :email
-    %p
-      = f.label :zipcode
-      = f.text_field :zipcode
-    %p
-      = f.label :password
-      = f.password_field :password
-    %p= f.submit
-
+#login-box
+  %h2 Welcome to Footprints
+  %p Join us in helping measure and compare your carbon footprint as you move around!
+  =form_for @user, {url: sessions_path } do |f|
+    =f.text_field :name, {class: "login-input", placeholder: "NAME"}
+    =f.email_field :email, {class: "login-input", placeholder: "EMAIL"}
+    =f.text_field :zipcode, {class: "login-input", placeholder: "ZIPCODE"}
+    =f.password_field :password, {class: "login-input", placeholder: "PASSWORD"}
+    =f.submit "login", class: "login-button"
   - if flash[:signup_errors]
     - flash[:signup_errors].each do |error|
       %p= error
