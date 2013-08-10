@@ -30,7 +30,7 @@ class UsersController < ApplicationController
     
   def index
     @user = self.current_user
-    @friends = current_user.friendships
+    @top_users = User.order('score DESC').limit(5)
   end
 
   def show
