@@ -11,14 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130810183453) do
+ActiveRecord::Schema.define(:version => 20130810192438) do
 
   create_table "events", :force => true do |t|
     t.integer "distance"
     t.integer "user_id"
     t.integer "score"
-    t.integer "miles_walked"
-    t.integer "miles_biked"
+    t.integer "meters_walked"
+    t.integer "meters_biked"
     t.integer "carbon_footprint"
     t.integer "calories"
   end
@@ -33,8 +33,6 @@ ActiveRecord::Schema.define(:version => 20130810183453) do
     t.string  "email"
     t.integer "zipcode"
     t.integer "score"
-    t.string  "moves_access_token"
-    t.string  "moves_refresh_token"
     t.string  "password_digest"
   end
 
