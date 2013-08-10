@@ -1,0 +1,15 @@
+.container
+  = form_for @user do |f|
+    %p= f.label :name
+    %p= f.text_field :name
+    %p= f.label :email
+    %p= f.email_field :email
+    %p= f.label :zipcode
+    %p= f.text_field :zipcode
+    %p= f.label :password
+    %p= f.password_field :password
+    %p= f.submit
+
+  - if flash[:signup_errors]
+    - flash[:signup_errors].each do |error|
+      %p= error
