@@ -41,13 +41,11 @@ GEM
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
-<<<<<<< HEAD
     faraday (0.8.8)
       multipart-post (~> 1.2.0)
     hashie (2.0.5)
     hike (1.2.3)
     httpauth (0.2.0)
-=======
     haml (4.0.3)
       tilt
     haml-rails (0.4)
@@ -62,7 +60,6 @@ GEM
       haml (>= 4.0.0.rc.1)
       hpricot (~> 0.8.6)
       ruby_parser (~> 3.1.1)
->>>>>>> 4262903cc16e77a997e000cb888e680bd3eb9772
     i18n (0.6.1)
     journey (1.0.4)
     jquery-rails (3.0.4)
