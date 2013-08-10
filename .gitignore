@@ -3,4 +3,4 @@
 /log/*.log
 /tmp
 
-*.lock
+Gemfile.lock
