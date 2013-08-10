@@ -62,4 +62,7 @@ Footprint::Application.routes.draw do
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
+  match 'login' => 'sessions#new', :as => "login"
+  resources :users, :only => [:new, :create]
+  resources :sessions, only: [:new, :create, :destroy]
 end

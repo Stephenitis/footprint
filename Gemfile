@@ -6,6 +6,9 @@ gem 'rails', '3.2.13'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'pg'
+gem 'html2haml'
+gem 'haml-rails'
+>>>>>>> routes_conts
 
 
 # Gems used only for assets and not required
