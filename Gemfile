@@ -23,7 +23,10 @@ gem 'bcrypt-ruby'#, '~> 3.0.0'
 gem  'httparty'
 gem 'unicorn'
 
+gem 'crack'
+
 group :development, :test do
+	gem 'annotate'
   gem "debugger"
   gem 'guard'
   gem 'guard-rspec'

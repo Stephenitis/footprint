@@ -11,3 +11,125 @@
  *= require_self
  *= require_tree .
  */
+
+ body {
+ 	margin:0;
+ 	padding:0;
+ }
+
+nav
+ {
+ background-color:white;
+ width:100%;
+ height:50px;
+ box-shadow: 0px 1px 50px #5E5E5E;
+ position:fixed;
+ margin:0;
+ padding:0;
+ top:0px;
+}
+
+nav h1 {
+	color:black;
+	margin:0;
+	margin: 0.1em 0.3em;
+	float:left;
+}
+
+nav ul.left {
+	margin:0;
+	/*margin-top: 0.5em;*/
+	/*padding: 0.6em;	*/
+	float: left;
+	height:50px;
+}
+
+nav ul.right {
+	margin:0;
+	padding:0;
+	/*margin-top: 0.5em;*/
+	/*padding: 0.6em;	*/
+	float: right
+}
+
+nav ul li {
+	display: inline-block;
+	height:50px; 
+	/*margin-right: 1em;*/
+}
+
+nav ul li:nth_child(1) {
+	margin-top: -50px;
+}
+
+nav .button_link {
+	display: inline-block;
+	border:none; 
+  margin:0;
+  padding-left:1em;
+  padding-right:1em;
+  height:50px;
+  color:white;
+  font-size:1.25em;
+  cursor:pointer;
+  background-color: #6ecce5;
+  /*vertical-align: middle;*/
+}
+
+nav a:link {
+	font-size:1.25em;
+	color: black;
+	text-decoration: none;
+	vertical-align: middle;
+}
+nav a:visited {
+	color: black;
+	text-decoration: none;
+}
+nav a:hover {
+	color: #35ad25;
+	text-decoration: none;
+}
+nav a:active {
+	color: #56eb0f;
+	text-decoration: none;
+}
+
+nav .nav_button {
+  /*background:none!important;*/
+  border:none; 
+  margin:0;
+  padding-left:1em;
+  padding-right:1em;
+  height:50px;
+  font-size:1.25em;
+  cursor:pointer;
+}
+
+.bg-blue {
+  background-color: #6ecce5;
+  color:white;
+}
+
+.bg-white {
+  background-color: white;
+  color:#6ecce5;
+}
+
+nav .nav_button:link {
+	font-size:1.25em;
+	color: white;
+	text-decoration: none;
+}
+nav .nav_button:visited {
+	color: black;
+	text-decoration: none;
+}
+nav .nav_button:hover {
+	color: #f9961f;
+	text-decoration: none;
+}
+nav .nav_button:active {
+	color: #f9961f;
+	text-decoration: none;
+}
