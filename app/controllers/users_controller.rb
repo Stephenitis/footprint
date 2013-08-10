@@ -30,7 +30,7 @@ class UsersController < ApplicationController
   end
     
   def index
-
+    @user = self.current_user
   end
 
 end
