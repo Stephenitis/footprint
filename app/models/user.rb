@@ -10,4 +10,11 @@ class User < ActiveRecord::Base
 	# validates :zipcode, length: {is: 5}
 	has_many :events
   has_secure_password
+
+  def update_score!
+  	all_events = self.events.all
+  	total = all_events.inject(:+)
+  	self.score = total/all_events.size
+  	self.save
+  end
 end
