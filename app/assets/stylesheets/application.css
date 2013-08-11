@@ -154,8 +154,14 @@ nav .nav_button:active {
 	font-size: 10em;
 	margin:auto;
 	margin-top: 0.3em;
-	padding:auto;
+	padding:0;
 	color:black;
+}
+
+#daily-score p {
+	text-align: center;
+	margin: 0;
+	font-size: 2em;
 }
 
 #activity {
@@ -182,4 +188,18 @@ nav .nav_button:active {
 
 #rankings ul {
 	list-style: none;
+}
+
+#rankings ul li a {
+	text-decoration: none;
+	color:black;
+	font-size:2em;
+}
+
+#rankings h2 {
+	text-align: center;
+}
+
+#rankings ul li img {
+	border-radius: 5px;
 }

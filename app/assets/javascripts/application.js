@@ -13,3 +13,21 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+$(document).ready(function(){
+
+
+  var user_score = $('#daily-score > h1').text();
+  var score = parseFloat(user_score);
+
+  if (score >= 7){
+  	$('body').css({"background": 'url("assets/suburb_sad.jpg")'});
+  }
+
+  else if (score >= 4 && score < 7){
+  	$('body').css({"background": 'url("assets/suburb_meh.jpg")'});
+  }
+
+  else {
+  	$('body').css({"background": 'url("assets/suburb_good.jpg")'});
+  }
+});

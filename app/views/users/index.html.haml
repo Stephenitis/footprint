@@ -1,5 +1,6 @@
 #daily-score
   %h1 7.5
+  %p Pounds CO2/day
 
 #dashboard
   #activity
@@ -14,6 +15,7 @@
       %p lbs of CO2 emissions
 
   #rankings
+    %h2 Footprint Rankings
     %ul
       - @top_users.each_with_index do |user, index|
         %li= link_to "<img src='#{gravatar(user,75)}' alt='#{user.name}'> #{index + 1} #{user.name}".html_safe, user_path(user), class: 'user_profile', data: {id: user.id }
